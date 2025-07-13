@@ -1,0 +1,15 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
+  "devCommand": "npm run dev",
+  "installCommand": "npm ci",
+  "functions": {
+    "server/dist/index.js": {
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/client/dist/$1" }
+  ]
+} 
